@@ -6,10 +6,10 @@ void agregar(){
     archivo = fopen("prueba.txt","r+");
     printf("ingrese el nombre del alumno(50) \n");
     scanf("%s",nombre);
-    /*while (feof(archivo)==0)
+    while (feof(archivo)==0)
     {
         fread(nombre ,sizeof(nombre)+1,1,archivo);//lee hasta el salto de linea
-    }*/
+    }
     fwrite(nombre ,sizeof(nombre)+1,1,archivo);
     fclose(archivo);
     return ;
@@ -19,7 +19,7 @@ void  mostrar(){
     while (feof(archivo)==0)
     {
         fgets(nombre ,sizeof(nombre),archivo);//lee todo un tamaño de lo que le ponemos en el primer parametro
-        printf("%s",nombre);
+        printf("%s \n",nombre);
     }
     fclose(archivo);
     return ;
@@ -34,7 +34,7 @@ int main()
         printf("1 - agregar \n");
         printf("2 - visualizar \n");
         printf("3 - terminar \n");
-        scanf("%c",&op);
+        scanf("%d",&op);
         if (op==1)
         {
             agregar();
